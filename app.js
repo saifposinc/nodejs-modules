@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mod = require('./mod');
 const EventEmitter = require('events');
 const eventEmitter = new EventEmitter();
@@ -10,10 +9,17 @@ eventEmitter.on('objectName',(num1,num2)=>{
 	console.log(num1+num2);
 });
 eventEmitter.emit('objectName',12,5);
-=======
-const sumFunction = require('./mod');
-console.log(sumFunction);
-console.log(sumFunction(32,5));
-console.log(sumFunction.PI);
-console.log(sumFunction.someMathObject);
->>>>>>> parent of 771ceae... Groupinmg the exports
+class Person extends EventEmitter{
+	constructor(name){
+		super();
+		this._name = name;
+	}
+	get name(){
+		return this._name;
+	}
+}
+let ed = new Person('Ed');
+ed.on('name',()=>{
+	console.log('My name is '+ ed.name);
+});
+ed.emit('name');

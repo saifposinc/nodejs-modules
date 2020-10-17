@@ -6,5 +6,4 @@ class someMathObject{
 		console.log('object created');
 	}
 }
-module.exports.PI = PI;
-module.exports.someMathObject = someMathObject;
+module.exports = {sum: sum, PI: PI, someMathObject: someMathObject};
